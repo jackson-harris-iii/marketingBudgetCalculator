@@ -24,6 +24,11 @@ body, html {
     height: 650px;
 }
 
+#leftPanelTrigger {
+    background-color: #8C2130;
+    border: #000 solid 1px;
+}
+
 h1 {
 		font-size: 48px;
 		font-family: 'Ultra', serif;;
