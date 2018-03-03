@@ -11,7 +11,7 @@ function getStarted() {
     //show contact form
     $('#contactForm').show()
     //changes leftPanelTrigger button to nextButton
-    $('#startButton').text('Next').attr('id', 'nextButton').attr('class', 'btn btn-outline-danger btn-lg mt-4')
+    $('#startButton').text('Next').attr('id', 'formSubmit').attr('class', 'btn btn-outline-danger btn-lg mt-4 nextButton')
     var skip = $('<button>')
     skip.text('Skip').attr('class', 'btn btn-outline-danger btn-lg mt-4').attr('id', 'skipButton')
     $('#leftPanelStuff').append(skip)
@@ -38,14 +38,20 @@ function toolTip(infoField) {
 }
 
 function changeDisplay() {
-    console.log('next item')
+    console.log('nextItem')
+}
+
+function contactInfo() {
+    var name = $('#contactName').val().trim()
+    console.log(name)
 }
 
 //default calculator data is displayed
 welcomePanels()
 
 //triggers next panel
-$('#nextButton').click(changeDisplay)
+$('body').on('click', 'nextButton', changeDisplay)
+$('body', '#formSubmit', contactInfo)
 
 $('#startButton').click(getStarted)
 //displays info about question when a user mouses over it.
